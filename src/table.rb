@@ -7,10 +7,22 @@ class Table
   attr_accessor :players, :deck
 
   # table setup takes n number of players (default to 4 players)
-  def initialize(n=4)
+  def initialize
     @deck = Deck.new
     @players = []
-    n.times{ @players << Player.new }
+  end
+
+  def new_game
+    # collect info for human player
+    puts "Enter player name: "
+    name = gets.chomp
+    puts "Enter starting bankroll for players: "
+    money = gets.chomp.to_i
+    @players << Player.new(name, money)
+    # Setup the AI players
+    @players << Player.new("Mary", money)
+    @players << Player.new("Nathan", money)
+    @players << Player.new("Keith", money)
   end
 
   def new_round

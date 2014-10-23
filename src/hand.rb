@@ -23,4 +23,27 @@ class Hand
       return false
     end
   end
+
+  def show_all
+    puts "Un-assigned:"
+    @all_cards.each do |c|
+      print "#{c.display_card}, "
+    end
+    puts
+    puts "Top hand:"
+    @top.each do |c|
+      print "#{c.display_card}, "
+    end
+    puts
+    puts "Middle hand:"
+    @middle.each do |c|
+      print "#{c.display_card}, "
+    end
+    puts
+    puts "Bottom hand:"
+    @bottom.each do |c|
+      print "#{c.display_card}, "
+    end
+    puts
+  end
 end
