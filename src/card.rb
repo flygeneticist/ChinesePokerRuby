@@ -12,6 +12,6 @@ class Card
     end
 
     def display_card
-        return [self.value, self.suits[suit]]
+        return "#{@value} of #{@@suits[@suit]}"
     end
 end
